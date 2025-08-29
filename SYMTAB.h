@@ -1,20 +1,20 @@
 #pragma once
 #include <unordered_map>
+#include <iostream>
 #include <string>
 #include <vector>
 std::unordered_map<std::string, std::string> SYMTAB;
 
-void buildSymbolTable(std::vector<std::vector<std::string>> instructionMatrix){
-    int size = instructionMatrix.size() - 1; 
-    // [label] [opcode] [operand].
-    for(int i = 0; i < size; i++){
-        std::string label = instructionMatrix[i][0];
-        std::string opcode = instructionMatrix[i][1];
-        std::string operand = instructionMatrix[i][2];
-
-        if(!label.empty()){
-            SYMTAB[label]
-        }
-        
+void printSYMTAB(){
+    std::cout << "SYMBOL Table is as follows\n";
+    for(const auto[first, second]: SYMTAB){
+        std::cout << first << "\t" << second << "\n"; 
     }
+}
+
+void addToSymbolTable(std::string label, std::string address)
+{
+    if (SYMTAB.find(label) != SYMTAB.end())
+        return;
+    SYMTAB[label] = address;
 }

@@ -1,4 +1,4 @@
-    PROG    START   1000
+    PROG    START   0500
             LDA     FIVE
             STA     ALPHA
             LDCH    CHARZ
@@ -8,5 +8,3 @@
     CHARZ   BYTE    C'Z'
     C1      RESB    1
             END
-
-    
